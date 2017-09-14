@@ -5,6 +5,7 @@ import com.py.springboot.enums.StateEnum;
 /**
  * BaseResult
  * 统一的返回对象
+ *
  * @author pysasuke
  * @date 2017/9/14
  */
@@ -49,12 +50,11 @@ public class BaseResult<T> {
         this.message = message;
     }
 
-    public BaseResult(Integer state, String message,T data) {
+    public BaseResult(Integer state, String message, T data) {
         this.state = state;
         this.message = message;
         this.data = data;
     }
-
 
     @Override
     public String toString() {
@@ -67,11 +67,9 @@ public class BaseResult<T> {
 
     public static BaseResult success() {
         return new BaseResult(StateEnum.SUCCESS.getState(), StateEnum.SUCCESS.getStateInfo());
-
     }
 
     public static BaseResult error() {
         return new BaseResult(StateEnum.FAIL.getState(), StateEnum.FAIL.getStateInfo());
     }
-
 }

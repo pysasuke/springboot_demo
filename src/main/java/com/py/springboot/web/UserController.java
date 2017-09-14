@@ -15,12 +15,11 @@ import javax.annotation.Resource;
  * @author pysasuke
  * @date 2017/9/13
  */
-@RestController
+@RestController//@RestController = @Controller(控制层注解) + @ResponseBody(返回json对象)。
 @RequestMapping(value = "/user/v1")
 public class UserController {
     @Resource
     private UserService userService;
-
 
     @ApiOperation(value = "新增用户", notes = "新增用户")
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
@@ -34,7 +33,6 @@ public class UserController {
     public BaseResult getById(@RequestParam("id") Long id) {
         User user = userService.selectByPrimaryKey(id);
         return new BaseResult(StateEnum.SUCCESS.getState(), StateEnum.SUCCESS.getStateInfo(), user);
-
     }
 
     @ApiOperation(value = "根据用户id修改用户", notes = "根据用户id修改用户")
