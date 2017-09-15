@@ -51,9 +51,9 @@ spring.datasource.password=py123456
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 
 ## Mybatis 配置
-##指向实体类包路径
+## 指向实体类包路径
 mybatis.typeAliasesPackage=com.py.springboot.entity
-##配置为 classpath 路径下 mapper 包下，* 代表会扫描所有 xml 文件
+## 配置为 classpath 路径下 mapper 包下,* 代表会扫描所有 xml 文件
 mybatis.mapperLocations=classpath:mapper/*.xml
 ```
 - log4j.properties:日志相关配置
